@@ -1,0 +1,444 @@
+{
+    "properties": [
+        {
+            "id": "RP-001",
+            "type": "sale",
+            "title": "Luxury Beachfront Condo",
+            "price": 350000,
+            "priceType": "sale",
+            "location": "Las Conchas",
+            "coordinates": {
+                "lat": 31.3167,
+                "lng": -113.5500
+            },
+            "description": "Experience unparalleled luxury and breathtaking ocean vistas in this exclusive beachfront residence. Located in the prestigious Las Conchas community, this stunning 3-bedroom condo offers direct beach access, modern amenities, and spectacular sunset views. Perfect for relaxation or investment.",
+            "bedrooms": 3,
+            "bathrooms": 2,
+            "sqft": 1850,
+            "amenities": [
+                "Ocean View",
+                "Private Beach Access",
+                "Infinity Pool",
+                "Gated Community",
+                "24/7 Security",
+                "Covered Parking",
+                "Central A/C",
+                "Modern Kitchen"
+            ],
+            "features": [
+                "Floor-to-ceiling windows",
+                "Master suite with ocean view",
+                "Granite countertops",
+                "Stainless steel appliances",
+                "Private balcony",
+                "HOA includes water and maintenance"
+            ],
+            "images": [
+                "property_beachfront_condo_1_1769719577703.png"
+            ],
+            "featured": true,
+            "availableFrom": "2026-02-01",
+            "yearBuilt": 2021,
+            "hoa": 250,
+            "status": "available"
+        },
+        {
+            "id": "RP-002",
+            "type": "sale",
+            "title": "Modern Ocean View Villa",
+            "price": 575000,
+            "priceType": "sale",
+            "location": "Sandy Beach",
+            "coordinates": {
+                "lat": 31.3500,
+                "lng": -113.5200
+            },
+            "description": "Contemporary architectural masterpiece perched above Sandy Beach. This 4-bedroom villa combines modern design with Mexican warmth. Features include infinity pool, outdoor kitchen, and panoramic Sea of Cortez views. A true paradise for discerning buyers.",
+            "bedrooms": 4,
+            "bathrooms": 3.5,
+            "sqft": 3200,
+            "amenities": [
+                "Ocean View",
+                "Infinity Pool",
+                "Outdoor Kitchen",
+                "Wine Cellar",
+                "Smart Home",
+                "Solar Panels",
+                "2-Car Garage",
+                "Guest Suite"
+            ],
+            "features": [
+                "Open concept design",
+                "Floor-to-ceiling glass walls",
+                "Outdoor living spaces",
+                "High-end finishes throughout",
+                "Sunset deck",
+                "Low maintenance landscaping"
+            ],
+            "images": [
+                "property_ocean_view_villa_2_1769719592504.png"
+            ],
+            "featured": true,
+            "availableFrom": "2026-03-15",
+            "yearBuilt": 2023,
+            "hoa": 0,
+            "status": "available"
+        },
+        {
+            "id": "RP-003",
+            "type": "rent",
+            "title": "Charming Beach House Rental",
+            "price": 180,
+            "priceType": "night",
+            "location": "Playa Encanto",
+            "coordinates": {
+                "lat": 31.3300,
+                "lng": -113.5400
+            },
+            "description": "Your perfect beach getaway awaits! This charming 3-bedroom house offers authentic Mexican beach living with modern comforts. Steps from the beach, enjoy covered patios, hammocks, and the sound of waves. Ideal for families and groups.",
+            "bedrooms": 3,
+            "bathrooms": 2,
+            "sqft": 1600,
+            "sleeps": 8,
+            "amenities": [
+                "Beach Access",
+                "BBQ Grill",
+                "Wi-Fi",
+                "Full Kitchen",
+                "Ceiling Fans",
+                "Outdoor Shower",
+                "Hammocks",
+                "Beach Toys"
+            ],
+            "features": [
+                "Traditional Mexican architecture",
+                "Large covered patio",
+                "Tropical garden",
+                "Walking distance to restaurants",
+                "Family-friendly",
+                "Pet-friendly (with deposit)"
+            ],
+            "images": [
+                "property_beach_house_3_1769719607272.png"
+            ],
+            "featured": false,
+            "minStay": 3,
+            "maxOccupancy": 8,
+            "cleaningFee": 100,
+            "status": "available"
+        },
+        {
+            "id": "RP-004",
+            "type": "sale",
+            "title": "Penthouse with Panoramic Views",
+            "price": 425000,
+            "priceType": "sale",
+            "location": "Princesa de Peñasco",
+            "coordinates": {
+                "lat": 31.3200,
+                "lng": -113.5300
+            },
+            "description": "Spectacular top-floor penthouse in the prestigious Princesa resort. Floor-to-ceiling windows showcase 270-degree ocean views. Features include private rooftop terrace, luxury finishes, and access to world-class resort amenities.",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "sqft": 1650,
+            "amenities": [
+                "Ocean View",
+                "Rooftop Terrace",
+                "Resort Pool",
+                "Fitness Center",
+                "Restaurant On-site",
+                "Concierge",
+                "Valet Parking",
+                "Beach Club"
+            ],
+            "features": [
+                "Panoramic windows",
+                "Gourmet kitchen",
+                "Marble bathrooms",
+                "Walk-in closets",
+                "Private terrace with jacuzzi",
+                "Resort rental program available"
+            ],
+            "images": [
+                "property_penthouse_4_1769719622001.png"
+            ],
+            "featured": true,
+            "availableFrom": "2026-02-20",
+            "yearBuilt": 2020,
+            "hoa": 400,
+            "status": "available"
+        },
+        {
+            "id": "RP-005",
+            "type": "sale",
+            "title": "Golf Course Home",
+            "price": 385000,
+            "priceType": "sale",
+            "location": "Las Palomas Golf Resort",
+            "coordinates": {
+                "lat": 31.3400,
+                "lng": -113.5100
+            },
+            "description": "Stunning Spanish colonial home on the golf course with mountain views. This 3-bedroom gem features private pool, covered outdoor living, and access to championship golf. Perfect for golf enthusiasts and tranquil living.",
+            "bedrooms": 3,
+            "bathrooms": 2.5,
+            "sqft": 2400,
+            "amenities": [
+                "Golf Course View",
+                "Private Pool",
+                "Golf Membership",
+                "Covered Patio",
+                "Mountain Views",
+                "2-Car Garage",
+                "Community Clubhouse",
+                "Security"
+            ],
+            "features": [
+                "Spanish colonial architecture",
+                "Tile roof",
+                "Landscaped yard",
+                "Outdoor fireplace",
+                "Golf cart garage",
+                "Resort amenities access"
+            ],
+            "images": [
+                "property_golf_course_home_5_1769719638148.png"
+            ],
+            "featured": false,
+            "availableFrom": "2026-04-01",
+            "yearBuilt": 2019,
+            "hoa": 320,
+            "status": "available"
+        },
+        {
+            "id": "RP-006",
+            "type": "sale",
+            "title": "Prime Waterfront Building Lot",
+            "price": 225000,
+            "priceType": "sale",
+            "location": "Playa la Jolla",
+            "coordinates": {
+                "lat": 31.3250,
+                "lng": -113.5450
+            },
+            "description": "Rare opportunity! Prime beachfront lot ready for your dream home. 0.25 acres with 75 feet of sandy beach frontage. Utilities available, established neighborhood. Build your custom paradise in one of Rocky Point's most desirable locations.",
+            "bedrooms": 0,
+            "bathrooms": 0,
+            "sqft": 10890,
+            "lotSize": "0.25 acres",
+            "amenities": [
+                "Beach Frontage",
+                "Utilities Available",
+                "Paved Road Access",
+                "Established Neighborhood",
+                "Building Permits Available",
+                "Clear Title"
+            ],
+            "features": [
+                "75 feet beach frontage",
+                "Level lot",
+                "Ocean views",
+                "Sunset exposure",
+                "Near amenities",
+                "Investment potential"
+            ],
+            "images": [
+                "property_waterfront_lot_6_1769719654954.png"
+            ],
+            "featured": false,
+            "availableFrom": "2026-02-01",
+            "status": "available"
+        },
+        {
+            "id": "RP-007",
+            "type": "rent",
+            "title": "Family Vacation Home",
+            "price": 220,
+            "priceType": "night",
+            "location": "Las Conchas",
+            "coordinates": {
+                "lat": 31.3180,
+                "lng": -113.5480
+            },
+            "description": "Perfect family retreat! Spacious 4-bedroom home with pool, play area, and just 2 blocks from the beach. Gated community with 24/7 security. Features outdoor kitchen, games, and plenty of space for the whole family to create memories.",
+            "bedrooms": 4,
+            "bathrooms": 3,
+            "sqft": 2200,
+            "sleeps": 10,
+            "amenities": [
+                "Private Pool",
+                "BBQ Area",
+                "Kids Play Area",
+                "Gated Community",
+                "Wi-Fi",
+                "A/C Throughout",
+                "Game Room",
+                "Beach Gear"
+            ],
+            "features": [
+                "Family-friendly layout",
+                "Safe neighborhood",
+                "Close to beach",
+                "Outdoor dining area",
+                "Fully equipped kitchen",
+                "Washer/dryer included"
+            ],
+            "images": [
+                "property_family_rental_7_1769719675757.png"
+            ],
+            "featured": false,
+            "minStay": 4,
+            "maxOccupancy": 10,
+            "cleaningFee": 150,
+            "status": "available"
+        },
+        {
+            "id": "RP-008",
+            "type": "sale",
+            "title": "Turnkey Investment Condo",
+            "price": 185000,
+            "priceType": "sale",
+            "location": "Sonoran Sky",
+            "coordinates": {
+                "lat": 31.3220,
+                "lng": -113.5320
+            },
+            "description": "Excellent investment opportunity! Fully furnished 2-bedroom condo in popular rental tower. Strong rental history, on-site management, and resort amenities. Perfect for vacation rental income or personal beach getaway. ROI potential 8-10%.",
+            "bedrooms": 2,
+            "bathrooms": 2,
+            "sqft": 1100,
+            "amenities": [
+                "Ocean View",
+                "Resort Pools",
+                "Fitness Center",
+                "Restaurant",
+                "Rental Management",
+                "Beach Access",
+                "Elevators",
+                "Covered Parking"
+            ],
+            "features": [
+                "Fully furnished turnkey",
+                "Proven rental income",
+                "Low maintenance",
+                "On-site rental desk",
+                "Strong HOA",
+                "Immediate rental potential"
+            ],
+            "images": [
+                "property_investment_condo_8_1769719691978.png"
+            ],
+            "featured": true,
+            "availableFrom": "2026-03-01",
+            "yearBuilt": 2018,
+            "hoa": 275,
+            "rentalIncome": "Est. $18,000-22,000/year",
+            "status": "available"
+        },
+        {
+            "id": "RP-009",
+            "type": "rent",
+            "title": "Romantic Oceanfront Escape",
+            "price": 165,
+            "priceType": "night",
+            "location": "Sandy Beach",
+            "coordinates": {
+                "lat": 31.3450,
+                "lng": -113.5250
+            },
+            "description": "Intimate 1-bedroom oceanfront condo perfect for couples. Wake up to sunrise over the Sea of Cortez, enjoy private balcony dining, and fall asleep to ocean waves. Recently renovated with coastal chic decor. Your romantic getaway awaits!",
+            "bedrooms": 1,
+            "bathrooms": 1,
+            "sqft": 750,
+            "sleeps": 2,
+            "amenities": [
+                "Ocean View",
+                "Private Balcony",
+                "Resort Pool",
+                "Hot Tub",
+                "Beach Access",
+                "Wi-Fi",
+                "King Bed",
+                "Full Kitchen"
+            ],
+            "features": [
+                "Oceanfront location",
+                "Romantic atmosphere",
+                "Newly renovated",
+                "Coastal decor",
+                "Perfect for couples",
+                "Sunset views"
+            ],
+            "images": [
+                "property_penthouse_4_1769719622001.png"
+            ],
+            "featured": false,
+            "minStay": 2,
+            "maxOccupancy": 2,
+            "cleaningFee": 75,
+            "status": "available"
+        },
+        {
+            "id": "RP-010",
+            "type": "rent",
+            "title": "Luxury Beachfront Villa Rental",
+            "price": 450,
+            "priceType": "night",
+            "location": "Playa Encanto",
+            "coordinates": {
+                "lat": 31.3320,
+                "lng": -113.5420
+            },
+            "description": "Ultimate luxury! Spectacular 5-bedroom beachfront villa with infinity pool, chef's kitchen, and private beach. Includes daily housekeeping, concierge service, and chef upon request. Perfect for weddings, family reunions, or executive retreats.",
+            "bedrooms": 5,
+            "bathrooms": 5.5,
+            "sqft": 4500,
+            "sleeps": 12,
+            "amenities": [
+                "Private Beach",
+                "Infinity Pool",
+                "Daily Housekeeping",
+                "Concierge Service",
+                "Chef Available",
+                "Hot Tub",
+                "Game Room",
+                "Rooftop Terrace",
+                "BBQ Area",
+                "Security"
+            ],
+            "features": [
+                "Ultra-luxury finishes",
+                "Multiple living areas",
+                "Gourmet kitchen",
+                "Wedding venue option",
+                "Event hosting capable",
+                "VIP services available"
+            ],
+            "images": [
+                "property_ocean_view_villa_2_1769719592504.png"
+            ],
+            "featured": true,
+            "minStay": 5,
+            "maxOccupancy": 14,
+            "cleaningFee": 300,
+            "status": "available"
+        }
+    ],
+    "metadata": {
+        "totalProperties": 10,
+        "forSale": 6,
+        "forRent": 4,
+        "featured": 4,
+        "generated": "2026-01-29",
+        "location": "Rocky Point (Puerto Peñasco), Sonora, Mexico",
+        "currency": "USD",
+        "agent": {
+            "name": "Jesús Mirazo",
+            "company": "Coldwell Banker",
+            "phone": "+52-XXX-XXX-XXXX",
+            "email": "jesus@rockypointjesus.com",
+            "whatsapp": "+52-XXX-XXX-XXXX"
+        }
+    }
+}

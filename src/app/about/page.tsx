@@ -3,54 +3,16 @@
 import { useState } from 'react';
 import { FloatingContactButton } from '@/components/FloatingContactButton';
 import { LeadCaptureModal } from '@/components/LeadCaptureModal';
+import { Navbar } from '@/components/Navbar';
 import Image from 'next/image';
-import Link from 'next/link';
 
 export default function AboutPage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
         <main className="min-h-screen bg-white-sand">
-            {/* Header */}
-            <header className="fixed top-0 left-0 right-0 z-30 bg-white/95 backdrop-blur-md shadow-sm">
-                <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-                    <Link href="/" className="flex items-center gap-3">
-                        <Image
-                            src="/logo-coldwell-banker.png"
-                            alt="Coldwell Banker"
-                            width={180}
-                            height={45}
-                            className="h-10 w-auto"
-                            priority
-                        />
-                    </Link>
-                    <nav className="hidden md:flex items-center gap-8">
-                        <Link href="/" className="text-dark-navy hover:text-ocean-blue transition-colors font-medium">
-                            Home
-                        </Link>
-                        <Link href="/rentals" className="text-dark-navy hover:text-ocean-blue transition-colors font-medium">
-                            Rentals
-                        </Link>
-                        <Link href="/sales" className="text-dark-navy hover:text-ocean-blue transition-colors font-medium">
-                            For Sale
-                        </Link>
-                        <Link href="/about" className="text-ocean-blue font-semibold">
-                            About
-                        </Link>
-                        <button
-                            onClick={() => setIsModalOpen(true)}
-                            className="bg-sunset-coral text-white px-6 py-2.5 rounded-full hover:bg-sunset-coral/90 transition-all hover:-translate-y-0.5 shadow-lg font-medium"
-                        >
-                            Contact Me
-                        </button>
-                    </nav>
-                    <button className="md:hidden text-dark-navy">
-                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-            </header>
+            {/* Navbar with mobile menu */}
+            <Navbar onOpenModal={() => setIsModalOpen(true)} currentPage="about" />
 
             {/* Hero Section */}
             <section className="relative h-[500px] bg-gradient-to-br from-ocean-blue via-sky-azure to-sunset-coral overflow-hidden pt-20">
@@ -173,6 +135,76 @@ export default function AboutPage() {
                                         <div>
                                             <h4 className="text-xl font-bold text-dark-navy mb-2">{item.title}</h4>
                                             <p className="text-gray-600">{item.description}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* My Promise Section - NEW */}
+                        <div className="bg-gradient-to-br from-ocean-blue to-sky-azure text-white rounded-2xl p-8 md:p-12 mt-12">
+                            <h3 className="text-3xl font-bold mb-2 text-center">
+                                My Promise to You
+                            </h3>
+                            <p className="text-white/90 text-center mb-8 max-w-2xl mx-auto">
+                                When you work with me, you get more than an agent—you get a partner committed to your success.
+                            </p>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                {[
+                                    {
+                                        icon: (
+                                            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        ),
+                                        title: '24-Hour Response Guarantee',
+                                        description: 'I\'ll get back to you within 24 hours, every time.',
+                                    },
+                                    {
+                                        icon: (
+                                            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        ),
+                                        title: 'No Pressure—Ever',
+                                        description: 'Take your time. The right decision is worth the wait.',
+                                    },
+                                    {
+                                        icon: (
+                                            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+                                            </svg>
+                                        ),
+                                        title: 'Bilingual Support',
+                                        description: 'Fluent communication in English and Spanish.',
+                                    },
+                                    {
+                                        icon: (
+                                            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 00-2-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                            </svg>
+                                        ),
+                                        title: 'Free Market Analysis',
+                                        description: 'Complimentary property valuation ($500 value).',
+                                    },
+                                    {
+                                        icon: (
+                                            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                            </svg>
+                                        ),
+                                        title: 'Your Best Interest, Always',
+                                        description: 'I work for you, not the commission.',
+                                    },
+                                ].map((item, index) => (
+                                    <div key={index} className="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                                        <div className="w-10 h-10 bg-sandy-gold text-dark-navy rounded-full flex items-center justify-center flex-shrink-0">
+                                            {item.icon}
+                                        </div>
+                                        <div>
+                                            <h4 className="font-bold mb-1">{item.title}</h4>
+                                            <p className="text-sm text-white/80">{item.description}</p>
                                         </div>
                                     </div>
                                 ))}

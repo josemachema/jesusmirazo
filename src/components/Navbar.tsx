@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { useEngagement } from '@/contexts/EngagementContext';
 
 interface NavbarProps {
     onOpenModal: () => void;
@@ -11,13 +12,19 @@ interface NavbarProps {
 
 export function Navbar({ onOpenModal, currentPage = 'home' }: NavbarProps) {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const { incrementClicks } = useEngagement();
 
     const isActive = (page: string) => currentPage === page;
+
+    const handleLinkClick = () => {
+        incrementClicks();
+        setIsMobileMenuOpen(false);
+    };
 
     return (
         <header className="bg-white shadow-sm sticky top-0 z-50">
             <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-                <Link href="/" className="flex items-center gap-2">
+                <Link href="/" className="flex items-center gap-2" onClick={incrementClicks}>
                     <Image
                         src="/logo-coldwell-banker.png"
                         alt="Coldwell Banker"
@@ -32,30 +39,35 @@ export function Navbar({ onOpenModal, currentPage = 'home' }: NavbarProps) {
                     <Link
                         href="/"
                         className={`font-medium transition-colors ${isActive('home') ? 'text-ocean-blue font-semibold' : 'text-dark-navy hover:text-ocean-blue'}`}
+                        onClick={incrementClicks}
                     >
                         Home
                     </Link>
                     <Link
                         href="/sales"
                         className={`font-medium transition-colors ${isActive('sales') ? 'text-ocean-blue font-semibold' : 'text-dark-navy hover:text-ocean-blue'}`}
+                        onClick={incrementClicks}
                     >
                         Sales
                     </Link>
                     <Link
                         href="/rentals"
                         className={`font-medium transition-colors ${isActive('rentals') ? 'text-ocean-blue font-semibold' : 'text-dark-navy hover:text-ocean-blue'}`}
+                        onClick={incrementClicks}
                     >
                         Rentals
                     </Link>
                     <Link
                         href="/about"
                         className={`font-medium transition-colors ${isActive('about') ? 'text-ocean-blue font-semibold' : 'text-dark-navy hover:text-ocean-blue'}`}
+                        onClick={incrementClicks}
                     >
                         About
                     </Link>
                     <Link
                         href="/contact"
                         className={`font-medium transition-colors ${isActive('contact') ? 'text-ocean-blue font-semibold' : 'text-dark-navy hover:text-ocean-blue'}`}
+                        onClick={incrementClicks}
                     >
                         Contact
                     </Link>
@@ -91,35 +103,35 @@ export function Navbar({ onOpenModal, currentPage = 'home' }: NavbarProps) {
                     <Link
                         href="/"
                         className={`block py-2 font-medium ${isActive('home') ? 'text-ocean-blue font-semibold' : 'text-dark-navy hover:text-ocean-blue'}`}
-                        onClick={() => setIsMobileMenuOpen(false)}
+                        onClick={handleLinkClick}
                     >
                         Home
                     </Link>
                     <Link
                         href="/sales"
                         className={`block py-2 font-medium ${isActive('sales') ? 'text-ocean-blue font-semibold' : 'text-dark-navy hover:text-ocean-blue'}`}
-                        onClick={() => setIsMobileMenuOpen(false)}
+                        onClick={handleLinkClick}
                     >
                         Sales
                     </Link>
                     <Link
                         href="/rentals"
                         className={`block py-2 font-medium ${isActive('rentals') ? 'text-ocean-blue font-semibold' : 'text-dark-navy hover:text-ocean-blue'}`}
-                        onClick={() => setIsMobileMenuOpen(false)}
+                        onClick={handleLinkClick}
                     >
                         Rentals
                     </Link>
                     <Link
                         href="/about"
                         className={`block py-2 font-medium ${isActive('about') ? 'text-ocean-blue font-semibold' : 'text-dark-navy hover:text-ocean-blue'}`}
-                        onClick={() => setIsMobileMenuOpen(false)}
+                        onClick={handleLinkClick}
                     >
                         About
                     </Link>
                     <Link
                         href="/contact"
                         className={`block py-2 font-medium ${isActive('contact') ? 'text-ocean-blue font-semibold' : 'text-dark-navy hover:text-ocean-blue'}`}
-                        onClick={() => setIsMobileMenuOpen(false)}
+                        onClick={handleLinkClick}
                     >
                         Contact
                     </Link>

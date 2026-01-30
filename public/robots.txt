@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://rockypointjesus.com/sitemap.xml
+
+# Block admin and private areas (if backend is added later)
+Disallow: /admin/
+Disallow: /api/
+
+# Crawl-delay for politeness
+Crawl-delay: 1

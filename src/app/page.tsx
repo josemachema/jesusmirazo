@@ -8,10 +8,14 @@ import { PropertyCard } from '@/components/PropertyCard';
 import { Testimonials } from '@/components/Testimonials';
 import { FloatingContactButton } from '@/components/FloatingContactButton';
 import { LeadCaptureModal } from '@/components/LeadCaptureModal';
+import { PropertyDetailsModal } from '@/components/PropertyDetailsModal';
 import { useEngagement } from '@/contexts/EngagementContext';
+import type { Property } from '@/types';
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
+  const [selectedProperty, setSelectedProperty] = useState<Property | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { shouldShowModal, markModalShown } = useEngagement();
 
@@ -21,6 +25,16 @@ export default function Home() {
       markModalShown();
     }
   }, [shouldShowModal, markModalShown]);
+
+  const handleViewDetails = (property: Property) => {
+    setSelectedProperty(property);
+    setIsDetailsModalOpen(true);
+  };
+
+  const handleContactFromDetails = () => {
+    setIsDetailsModalOpen(false);
+    setIsModalOpen(true);
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -135,63 +149,70 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <PropertyCard property={{
-                id: "1",
-                title: "Las Palomas Beachfront Condo",
-                price: 425000,
-                priceType: "sale" as const,
-                bedrooms: 3,
-                bathrooms: 2,
-                sqft: 1850,
-                images: ["property-1.png"],
-                location: "Sandy Beach",
-                coordinates: { lat: 31.333, lng: -113.533 },
-                description: "Stunning beachfront condo with ocean views",
-                amenities: ["Pool", "Gym", "Security"],
-                features: ["Ocean View", "Balcony", "Parking"],
-                type: "sale" as const,
-                featured: true,
-                availableFrom: "2026-02-01",
-                status: "available" as const
-              }} />
-              <PropertyCard property={{
-                id: "2",
-                title: "Sonoran Sea Resort",
-                price: 389000,
-                priceType: "sale" as const,
-                bedrooms: 2,
-                bathrooms: 2,
-                sqft: 1400,
-                images: ["property-2.png"],
-                location: "Sandy Beach",
-                coordinates: { lat: 31.335, lng: -113.535 },
-                description: "Luxury resort condo with stunning views",
-                amenities: ["Pool", "Beach Access", "Security"],
-                features: ["Ocean View", "Balcony", "Parking"],
-                type: "sale" as const,
-                featured: true,
-                availableFrom: "2026-02-01",
-                status: "available" as const
-              }} />
-              <PropertyCard property={{
-                id: "3",
-                title: "Princesa de Peñasco",
-                price: 350000,
-                priceType: "sale" as const,
-                bedrooms: 2,
-                bathrooms: 2,
-                sqft: 1250,
-                images: ["property-3.png"],
-                location: "Cholla Bay",
-                coordinates: { lat: 31.320, lng: -113.520 },
-                description: "Beautiful beachfront property",
-                amenities: ["Pool", "Gym", "Beach Access"],
-                features: ["Ocean View", "Balcony", "Parking"],
-                type: "sale" as const,
-                featured: true,
-                availableFrom: "2026-02-01",
-                status: "available" as const
-              }} />
+              <PropertyCard
+                onViewDetails={(prop) => handleViewDetails(prop)}
+                property={{
+                  id: "1",
+                  title: "Las Palomas Beachfront Condo",
+                  price: 425000,
+                  priceType: "sale" as const,
+                  bedrooms: 3,
+                  bathrooms: 2,
+                  sqft: 1850,
+                  images: ["property-1.png"],
+                  location: "Sandy Beach",
+                  coordinates: { lat: 31.333, lng: -113.533 },
+                  description: "Stunning beachfront condo with ocean views",
+                  amenities: ["Pool", "Gym", "Security"],
+                  features: ["Ocean View", "Balcony", "Parking"],
+                  type: "sale" as const,
+                  featured: true,
+                  availableFrom: "2026-02-01",
+                  status: "available" as const
+                }}
+              />
+              <PropertyCard
+                onViewDetails={(prop) => handleViewDetails(prop)}
+                property={{
+                  id: "2",
+                  title: "Sonoran Sea Resort",
+                  price: 389000,
+                  priceType: "sale" as const,
+                  bedrooms: 2,
+                  bathrooms: 2,
+                  sqft: 1400,
+                  images: ["property-2.png"],
+                  location: "Sandy Beach",
+                  coordinates: { lat: 31.335, lng: -113.535 },
+                  description: "Luxury resort condo with stunning views",
+                  amenities: ["Pool", "Beach Access", "Security"],
+                  features: ["Ocean View", "Balcony", "Parking"],
+                  type: "sale" as const,
+                  featured: true,
+                  availableFrom: "2026-02-01",
+                  status: "available" as const
+                }} />
+              <PropertyCard
+                onViewDetails={() => setIsModalOpen(true)}
+                property={{
+                  id: "3",
+                  title: "Princesa de Peñasco",
+                  price: 350000,
+                  priceType: "sale" as const,
+                  bedrooms: 2,
+                  bathrooms: 2,
+                  sqft: 1250,
+                  images: ["property-3.png"],
+                  location: "Cholla Bay",
+                  coordinates: { lat: 31.320, lng: -113.520 },
+                  description: "Beautiful beachfront property",
+                  amenities: ["Pool", "Gym", "Beach Access"],
+                  features: ["Ocean View", "Balcony", "Parking"],
+                  type: "sale" as const,
+                  featured: true,
+                  availableFrom: "2026-02-01",
+                  status: "available" as const
+                }} />
             </div>
 
             <div className="text-center mt-12">
@@ -257,6 +278,12 @@ export default function Home() {
 
       <FloatingContactButton onOpenModal={() => setIsModalOpen(true)} />
       <LeadCaptureModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <PropertyDetailsModal
+        property={selectedProperty}
+        isOpen={isDetailsModalOpen}
+        onClose={() => setIsDetailsModalOpen(false)}
+        onContactAgent={handleContactFromDetails}
+      />
     </div>
   );
 }

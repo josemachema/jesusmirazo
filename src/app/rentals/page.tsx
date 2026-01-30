@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { PropertyCard } from '@/components/PropertyCard';
 import { FloatingContactButton } from '@/components/FloatingContactButton';
 import { LeadCaptureModal } from '@/components/LeadCaptureModal';
+import { PropertyDetailsModal } from '@/components/PropertyDetailsModal';
 import { Navbar } from '@/components/Navbar';
 import { getPropertiesForRent } from '@/lib/properties';
 import Image from 'next/image';
@@ -11,6 +12,8 @@ import Link from 'next/link';
 
 export default function RentalsPage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
+    const [selectedProperty, setSelectedProperty] = useState<any>(null);
     const [selectedFilter, setSelectedFilter] = useState<'all' | 'beachfront' | 'condo' | 'house'>('all');
     const rentals = getPropertiesForRent();
 
@@ -23,6 +26,16 @@ export default function RentalsPage() {
             if (selectedFilter === 'house') return title.includes('house') || title.includes('villa');
             return true;
         });
+
+    const handleViewDetails = (property: any) => {
+        setSelectedProperty(property);
+        setIsDetailsModalOpen(true);
+    };
+
+    const handleContactFromDetails = () => {
+        setIsDetailsModalOpen(false);
+        setIsModalOpen(true);
+    };
 
     return (
         <main className="min-h-screen bg-white-sand">
@@ -83,7 +96,7 @@ export default function RentalsPage() {
                     {filteredRentals.length > 0 ? (
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {filteredRentals.map((property) => (
-                                <PropertyCard key={property.id} property={property} />
+                                <PropertyCard key={property.id} property={property} onViewDetails={(prop) => handleViewDetails(prop)} />
                             ))}
                         </div>
                     ) : (
@@ -150,6 +163,12 @@ export default function RentalsPage() {
             <LeadCaptureModal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
+            />
+            <PropertyDetailsModal
+                property={selectedProperty}
+                isOpen={isDetailsModalOpen}
+                onClose={() => setIsDetailsModalOpen(false)}
+                onContactAgent={handleContactFromDetails}
             />
         </main>
     );

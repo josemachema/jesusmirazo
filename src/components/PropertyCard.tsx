@@ -6,9 +6,10 @@ import Image from 'next/image';
 
 interface PropertyCardProps {
     property: Property;
+    onViewDetails?: (property: Property) => void;
 }
 
-export function PropertyCard({ property }: PropertyCardProps) {
+export function PropertyCard({ property, onViewDetails }: PropertyCardProps) {
     const formatPrice = () => {
         if (property.priceType === 'night') {
             return `$${property.price}/night`;
@@ -20,6 +21,12 @@ export function PropertyCard({ property }: PropertyCardProps) {
         const message = `Hi! I'm interested in ${property.title} (${property.id}). Can you provide more information?`;
         const whatsappUrl = `https://wa.me/YOUR_PHONE_NUMBER?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
+    };
+
+    const handleViewDetails = () => {
+        if (onViewDetails) {
+            onViewDetails(property);
+        }
     };
 
     return (
@@ -109,7 +116,7 @@ export function PropertyCard({ property }: PropertyCardProps) {
                         </svg>
                         WhatsApp
                     </Button>
-                    <Button variant="outline" size="sm">
+                    <Button variant="outline" size="sm" onClick={handleViewDetails}>
                         View Details
                     </Button>
                 </div>

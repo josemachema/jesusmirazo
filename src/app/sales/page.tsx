@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { PropertyCard } from '@/components/PropertyCard';
 import { FloatingContactButton } from '@/components/FloatingContactButton';
 import { LeadCaptureModal } from '@/components/LeadCaptureModal';
+import { PropertyDetailsModal } from '@/components/PropertyDetailsModal';
 import { Navbar } from '@/components/Navbar';
 import { getPropertiesForSale } from '@/lib/properties';
 import Image from 'next/image';
@@ -11,6 +12,8 @@ import Link from 'next/link';
 
 export default function SalesPage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
+    const [selectedProperty, setSelectedProperty] = useState<any>(null);
     const [selectedFilter, setSelectedFilter] = useState<'all' | 'condo' | 'house' | 'land'>('all');
     const salesProperties = getPropertiesForSale();
 
@@ -23,6 +26,16 @@ export default function SalesPage() {
             if (selectedFilter === 'land') return title.includes('lot') || title.includes('land');
             return true;
         });
+
+    const handleViewDetails = (property: any) => {
+        setSelectedProperty(property);
+        setIsDetailsModalOpen(true);
+    };
+
+    const handleContactFromDetails = () => {
+        setIsDetailsModalOpen(false);
+        setIsModalOpen(true);
+    };
 
     return (
         <main className="min-h-screen bg-white-sand">
@@ -103,7 +116,7 @@ export default function SalesPage() {
                     {filteredProperties.length > 0 ? (
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {filteredProperties.map((property) => (
-                                <PropertyCard key={property.id} property={property} />
+                                <PropertyCard key={property.id} property={property} onViewDetails={(prop) => handleViewDetails(prop)} />
                             ))}
                         </div>
                     ) : (
@@ -224,6 +237,12 @@ export default function SalesPage() {
             <LeadCaptureModal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
+            />
+            <PropertyDetailsModal
+                property={selectedProperty}
+                isOpen={isDetailsModalOpen}
+                onClose={() => setIsDetailsModalOpen(false)}
+                onContactAgent={handleContactFromDetails}
             />
         </main>
     );
